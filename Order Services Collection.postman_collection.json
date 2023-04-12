@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "bd6694b4-f65d-4d4e-8e2b-222a3574fcbd",
+		"name": "Order Services Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25271373"
+	},
+	"item": [
+		{
+			"name": "TakeOrderGateway",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "token3",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "openid offline_access",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "yfsUnV50h97L9kZ9lZbBXc2eXrbd8Oc7",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "melita-microservices-client",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8180/realms/melita-microservices-realm/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productName\":\"Mobile\",\n    \"packageName\":\"Prepaid\",\n    \"quantity\":1,\n    \"installationDate\":\"2022-10-10\",\n    \"installationSlot\":\"MORNING\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateOrderStatusGateway",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "token3",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "openid offline_access",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "yfsUnV50h97L9kZ9lZbBXc2eXrbd8Oc7",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "melita-microservices-client",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8180/realms/melita-microservices-realm/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"752f0ad6-2d21-4079-8bf5-23b104fd221e\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TakeOrder",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productName\":\"Mobile Phone\",\n    \"packageName\":\"Prepaid\",\n    \"installationDate\":\"2022-10-10\",\n    \"installationSlot\":\"MORNING\",\n    \"customerName\":\"Harun Dogus Coruh\",\n    \"customerEmail\":\"harundoguscoruh@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8081/api/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8083/api/products?productName=Television&packageName=With Internet Package",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "productName",
+							"value": "Television"
+						},
+						{
+							"key": "packageName",
+							"value": "With Internet Package"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateOrderStatus",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"752f0ad6-2d21-4079-8bf5-23b104fd221e\",\n    \"orderStatus\":\"APPROVED\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8082/api/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
